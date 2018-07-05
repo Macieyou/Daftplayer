@@ -1,0 +1,189 @@
+.next-song-wrapper {
+  .wave-form {
+    background: url("../images/waveform.png") repeat-x;
+    display: block;
+    background-size: contain;
+    height: 56px;
+    @include breakpoint(sm) {
+      height: 11vw;
+    }
+  }
+  .next-song {
+    background: $white;
+    padding: 20px 0;
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    bottom: 0;
+    @include breakpoint(sm) {
+      padding: 4vw 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: 30px;
+        @include breakpoint(sm) {
+          width: 6vw;
+        }
+      }
+      .title-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        margin-left: 20px;
+
+        &:before {
+          float: left;
+          width: 0;
+          white-space: nowrap;
+          color: $brand-gray;
+          top: 17px;
+          position: absolute;
+          content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
+          @include breakpoint(sm) {
+            top: 2vw;
+          }
+        }
+        .song-title {
+          float: left;
+          position: relative;
+        }
+        h2, .song-title {
+          padding: 0 1em;
+          background: white;
+          & + span {
+            float: right;
+            padding-left: 1em;
+            background: $white;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+.playlist-wrapper {
+  display: block;
+  background: url("../images/bg_image2.jpg") top / auto $bg-color no-repeat;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  z-index: 1000;
+  transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  &.toggle {
+    height: 100%;
+  }
+
+  .head {
+    img.play-active {
+      transform: scale(4);
+    }
+    .album-tile {
+      text-align: left;
+      margin-right: 200px;
+      @include breakpoint(sm) {
+        margin-right: 28vw;
+      }
+      h1 {
+        font-size: 1.45em;
+        margin-bottom: 3px;
+        @include breakpoint(sm) {
+          font-size: 4.5vw;
+        }
+      }
+      h2 {
+        margin-bottom: 0;
+        @include breakpoint(sm) {
+          font-size: 3.5vw;
+        }
+      }
+    }
+  }
+  .playlist {
+    padding: 30px 0;
+    background: $white;
+    overflow: hidden;
+    height: 100%;
+    @include breakpoint(sm) {
+      padding: 6vw 0;
+    }
+
+    ol {
+      overflow: hidden;
+      padding-left: 1em;
+      display: flex;
+      flex-direction: column;
+      list-style: decimal;
+
+      li {
+        margin: 19px 0;
+        @include breakpoint(sm) {
+          margin: 3vw 0;
+          font-size: 3.3vw;
+        }
+
+        &:before {
+          float: left;
+          width: 0;
+          white-space: nowrap;
+          color: $brand-gray;
+          content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
+        }
+      }
+      .song-title {
+        padding: 0 1em;
+        background: $white;
+      }
+      .song-title + span {
+        float: right;
+        padding-left: 1em;
+        background: $white;
+      }
+    }
+    .shuffle-play {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        background: $primary-color;
+        font-family: 'Source Sans Pro Bold';
+        font-size: 1.2em;
+        color: #FFF;
+        padding: 13px 0;
+        border: 2px solid $primary-color;
+        text-transform: uppercase;
+        width: 100%;
+        border-radius: 40px;
+        margin: 10px 0 20px 0;
+        box-shadow: 0 0 400px 150px rgba(255, 255, 255, 1);
+        transition: all .3s linear;
+        @include hover-btn;
+        span{
+          margin-bottom: 2px;
+          display: block;
+        }
+        @include breakpoint(sm) {
+          padding: 3vw 0;
+          font-size: 4vw;
+        }
+      }
+      img {
+        transform: rotate(-90deg);
+        height: 30px;
+        @include breakpoint(sm) {
+           height: 6vw;
+         }
+      }
+    }
+  }
+}

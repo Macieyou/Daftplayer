@@ -1,0 +1,42 @@
+.head {
+  display: flex;
+  align-items: center;
+  padding: 45px 0;
+  @include breakpoint(sm) {
+    padding: 7vw 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    img {
+      height: 30px;
+      position: relative;
+      z-index: 998;
+      @include breakpoint(sm) {
+        height: 5vw;
+      }
+    }
+
+    button.menuBtn {
+      padding: 0 5px;
+      img {
+
+      }
+    }
+
+    .album-tile {
+      text-align: center;
+
+      h2 {
+        margin-bottom: 10px;
+        @include breakpoint(sm) {
+          margin-bottom: 2vw;
+        }
+      }
+    }
+  }
+}

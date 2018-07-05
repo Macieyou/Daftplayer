@@ -1,0 +1,44 @@
+.navigation {
+  margin: 25px 0;
+  @include breakpoint(sm) {
+    margin: 4.5vw 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      img {
+        width: 30px;
+        @include breakpoint(sm) {
+          width: 6.5vw;
+        }
+      }
+    }
+
+    .play {
+      background-image: url("../images/Play_inactive.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 150px;
+      height: 156px;
+      @include breakpoint(sm) {
+        height: 32vw;
+        width: 31vw;
+      }
+
+      &.active {
+        background-image: url("../images/Play_active.png");
+        background-position: 3px -1px;
+        transform: scale(1.5);
+        transform-origin: center;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

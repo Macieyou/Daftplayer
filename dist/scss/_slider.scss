@@ -1,0 +1,44 @@
+.slick-list {
+  overflow: visible;
+}
+
+.slick-slide {
+  &:active, &:focus {
+    outline: none;
+  }
+  figcaption {
+    opacity: 0;
+    transition: opacity .5s ease-out;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include breakpoint(sm) {
+      margin-top: 6.5vw;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      @include breakpoint(sm) {
+        margin-bottom: 2vw;
+      }
+    }
+  }
+}
+
+.slick-slide {
+  img {
+    width: 100%;
+    transition: transform .5s ease-out;
+    transform: scale(.5);
+    transform-origin: center;
+  }
+  &.slick-center {
+    img {
+      transform: scale(1);
+    }
+    figcaption {
+      opacity: 1;
+    }
+  }
+}

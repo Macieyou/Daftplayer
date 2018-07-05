@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8" name="Description" content="Daftplayer-APP-mobile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#0fd65a">
+    <title>Daftplayer</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--LOADER-->
+<div id="loader-wrapper">
+    <div id="loader">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+
+<main class="main-view">
+    <!-- HEADER -->
+    <header class="head">
+        <div class="container">
+            <button class="back">
+                <img src="images/back_ico.svg" alt="back">
+            </button>
+            <div class="album-tile">
+                <h2>Album</h2>
+                <p class="white">Unreleased</p>
+            </div>
+            <button class="menuBtn">
+                <img src="images/more_ico.svg" alt="more">
+            </button>
+        </div>
+    </header>
+
+    <!-- SLIDER -->
+    <section class="slider">
+        <figure>
+            <img src="images/unreleased_cover.png" alt="Kaye West - Unreleased">
+            <figcaption>
+                <h1>Self Conscious</h1>
+                <h2>Kanye West</h2>
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="images/cover-1.png" alt="Kaye West - Freshmen Adjustment">
+            <figcaption>
+                <h1>Livin' In A Movie</h1>
+                <h2>Kanye West</h2>
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="images/cover.png" alt="Steel Panther">
+            <figcaption>
+                <h1>Steel Panther</h1>
+                <h2>Dark Fantasy</h2>
+            </figcaption>
+        </figure>
+    </section>
+
+    <!-- NAVIGATION -->
+    <section class="navigation">
+        <div class="container">
+            <button class="shuffle">
+                <img src="images/shuffle_ico.svg" alt="shuffle">
+            </button>
+            <button class="previous">
+                <img src="images/previous_ico.svg" alt="previous">
+            </button>
+            <button class="play">
+
+            </button>
+            <button class="next">
+                <img src="images/next_ico.svg" alt="next">
+            </button>
+            <button class="repeat">
+                <img src="images/repeat_ico.svg" alt="repeat">
+            </button>
+        </div>
+    </section>
+
+    <!--PROGRESS BAR-->
+    <section class="audio-wrapper" href="javascript:;">
+        <div class="container">
+            <audio id="player" ontimeupdate="initProgressBar()">
+                <source src="http://sadowm.ayz.pl/kanye-west-heartless.mp3" type="audio/mp3">
+            </audio>
+            <span class="start-time">0:00</span>
+            <div class="progress-bar">
+                <progress class="elapsed" id="elapsed" value="0" max="1"></progress>
+            </div>
+            <span class="end-time">3:32</span>
+        </div>
+    </section>
+
+    <!--NEXT SONG-->
+    <section class="next-song-wrapper">
+        <div class="wave-form"></div>
+        <div class="next-song">
+            <div class="container">
+                <button class="playlistBtn">
+                    <img src="images/playlist_ico.svg" alt="more">
+                </button>
+                <div class="title-wrapper">
+                    <h2>Next</h2>
+                    <p class="song-title">Livin' In A Movie</p>
+                    <span class="end-time">3:27</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--MENU-->
+    <div class="more">
+        <div class="container">
+            <div class="menu-wrapper">
+                <figure>
+                    <img src="images/unreleased_cover.png" alt="Kaye West - Unreleased">
+                    <figcaption>
+                        <h1>Self Conscious</h1>
+                        <h2>Kanye West</h2>
+                    </figcaption>
+                </figure>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="#" class="white">Add to playlist</a></li>
+                    <li><a href="#" class="white">Show album</a></li>
+                    <li><a href="#" class="white">Share with friends</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--PLAYLIST-->
+    <section class="playlist-wrapper">
+        <header class="head">
+            <div class="container">
+                <button class="backBtn">
+                    <img src="images/back_ico.svg" alt="back">
+                </button>
+                <div class="album-tile">
+                    <h1>Self Conscious</h1>
+                    <h2>Kanye West</h2>
+                </div>
+                <img class="play-active" src="images/Play_active.png" alt="play-active">
+            </div>
+        </header>
+        <section class="playlist">
+            <div class="container">
+                <ol>
+                    <li>
+                        <p class="song-title">Livin' In AMovie</p>
+                        <span class="end-time">3:27</span>
+                    </li>
+                    <li>
+                        <p class="song-title">Dark Fantasy</p>
+                        <span class="end-time">5:12</span>
+                    </li>
+                    <li>
+                        <p class="song-title">All of the Lights</p>
+                        <span class="end-time">2:54</span>
+                    </li>
+                    <li>
+                        <p class="song-title">So Appalled</p>
+                        <span class="end-time">3:51</span>
+                    </li>
+                    <li>
+                        <p class="song-title">Devil in a New Dress</p>
+                        <span class="end-time">4:51</span>
+                    </li>
+                    <li>
+                        <p class="song-title">Runaway</p>
+                        <span class="end-time">3:46</span>
+                    </li>
+                    <li>
+                        <p class="song-title">Hell of a Life</p>
+                        <span class="end-time">3:09</span>
+                    </li>
+                    <li>
+                        <p class="song-title">Blade Game</p>
+                        <span class="end-time">7:02</span>
+                    </li>
+                    <li>
+                        <p class="song-title">Lost in the World</p>
+                        <span class="end-time">3:27</span>
+                    </li>
+                    <li>
+                        <p class="song-title">Who Will Survive in America</p>
+                        <span class="end-time">3:11</span>
+                    </li>
+                    <li>
+                        <p class="song-title">Dark Fantasy</p>
+                        <span class="end-time">2:48</span>
+                    </li>
+                </ol>
+                <div class="shuffle-play">
+                    <button><span>Shuffle Play</span></button>
+                    <img src="images/back_ico.svg" alt="down">
+                </div>
+            </div>
+        </section>
+    </section>
+
+</main>
+<!--Scripts-->
+<script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/slick.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/progress-bar.js"></script>
+<script src="js/menu.js"></script>
+<script src="https://github.com/ahand/mobileesp/blob/master/JavaScript/mdetect.js"></script>
+<script>
+    $('.html').addClass('js');
+    $(window).load(function () {
+        setTimeout(
+            function () {
+                $("#loader-wrapper").fadeOut();
+            }, 1000);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+.more {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: rgba(27, 27, 27, .95);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 95vh;
+  overflow: hidden;
+  transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  -webkit-transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  &.toggle {
+    width: 100%;
+  }
+
+  .menu-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      figcaption {
+        margin-top: 30px;
+        text-align: center;
+        @include breakpoint(sm) {
+          margin-top: 6vw;
+        }
+        h1 {
+          margin-bottom: 10px;
+          @include breakpoint(sm) {
+            margin-bottom: 2.5vw;
+          }
+
+        }
+      }
+    }
+
+    .dots {
+      margin-top: 35px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include breakpoint(sm) {
+        margin-top: 7.5vw;
+        margin-bottom: 2vw;
+      }
+      span {
+        margin-left: 20px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:before {
+          content: '';
+          height: 3px;
+          width: 3px;
+          border-radius: 50%;
+          background: $brand-gray;
+          position: absolute;
+        }
+      }
+    }
+
+    ul li {
+      a {
+        margin-top: 35px;
+        display: block;
+        transition: all .3s linear;
+        @include hover-links;
+        @include breakpoint(sm) {
+          margin-top: 7.5vw;
+        }
+      }
+    }
+
+    img {
+      width: 180px;
+      @include breakpoint(sm) {
+        width: 40vw;
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-image: url('../images/trianglify.svg');
+  background-size: cover;
+  background-repeat: repeat;
+
+  #loader {
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    width: 90px;
+
+    ul {
+      margin: 0;
+      list-style: none;
+      width: 90px;
+      position: relative;
+      padding: 0;
+      height: 10px;
+
+      li {
+        position: absolute;
+        width: 3px;
+        height: 0;
+        background-color: $primary-color;
+        bottom: 0;
+        &:nth-child(1) {
+          left: 0;
+          animation: sequence1 1s ease infinite;
+        }
+        &:nth-child(2) {
+          left: 15px;
+          animation: sequence2 1s ease infinite 0.1s;
+        }
+        &:nth-child(3) {
+          left: 30px;
+          animation: sequence1 1s ease-in-out infinite 0.2s;
+        }
+        &:nth-child(4) {
+          left: 45px;
+          animation: sequence2 1s ease-in infinite 0.3s;
+        }
+        &:nth-child(5) {
+          left: 60px;
+          animation: sequence1 1s ease-in-out infinite 0.4s;
+        }
+        &:nth-child(6) {
+          left: 75px;
+          animation: sequence2 1s ease infinite 0.5s;
+        }
+      }
+    }
+  }
+}
+
+.main-view {
+  max-width: 576px;
+  position: relative;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  background-image: url("../images/bg_image2.jpg");
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: $bg-color;
+  overflow-x: hidden;
+  opacity: 0;
+  animation: show 1s ease-in forwards;
+
+  &.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    top: 0;
+    transform: none;
+    @include breakpoint(ip4) {
+      height: auto;
+    }
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    top: 0;
+    transform: none;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    top: 0;
+    transform: none;
+  }
+  @media (min-width: 1025px) and (max-width: 1280px) and (orientation: landscape) {
+    top: 0;
+    transform: none;
+  }
+  @include breakpoint(ip4) {
+    top: 0;
+    transform: none;
+  }
+}

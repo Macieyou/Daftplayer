@@ -1,0 +1,56 @@
+.audio-wrapper {
+  margin-bottom: 27px;
+  @include breakpoint(sm) {
+    margin-bottom: 5.5vw;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .progress-bar {
+      height: 1px;
+      background: $black;
+      width: 80%;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      @include breakpoint(sm) {
+        width: 75%;
+      }
+      @include breakpoint(xs) {
+        width: 65%;
+      }
+
+      &:after {
+        content: '';
+        width: 5px;
+        height: 5px;
+        background: $black;
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+      }
+
+      progress[value] {
+        appearance: none;
+        background: transparent;
+        color: $dark-gray;
+        height: 4px;
+      }
+      progress[value]::-webkit-progress-bar {
+        background: transparent;
+        border: 0;
+        color: $dark-gray;
+      }
+      progress::-webkit-progress-value {
+        background: $dark-gray;
+      }
+    }
+  }
+}
